@@ -3,16 +3,17 @@
   "version": "0.2.0",
   "private": true,
   "scripts": {
-    "dev": "next dev > /tmp/server.log 2>&1 &",
-    "wait-on-server": "wait-on http://localhost:3000",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "test:jest": "npx jest",
-    "test:delay": "sleep 10 && npm run test:jest",
-    "test:wait": "npm run wait-on-server && npm run test:jest",
-    "dev:test": "concurrently --kill-others-on-fail \"npm run dev\" \"npm run test:wait\""
-  },
+  "dev": "next dev",
+  "wait-on-server": "wait-on http://localhost:3000",
+  "build": "next build",
+  "start": "next start",
+  "lint": "next lint",
+  "test": "npm run test:jest",
+  "test:jest": "npx jest",
+  "test:delay": "sleep 10 && npm run test:jest",
+  "test:wait": "npm run wait-on-server && npm run test:jest",
+  "dev:test": "concurrently --kill-others-on-fail \"npm run dev\" \"npm run test:wait\""
+},
   "dependencies": {
     "@capacitor/android": "^6.1.0",
     "@capacitor/cli": "^6.1.0",
