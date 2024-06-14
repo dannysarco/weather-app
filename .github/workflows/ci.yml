@@ -26,14 +26,14 @@ jobs:
       run: npm install
 
     - name: Set up environment variables
-      run: echo "VARIABLE_NAME=${{ secrets.OPEN_WEATHER_KEY }}" >> $GITHUB_ENV
+      run: echo "NEXT_PUBLIC_OPENWEATHERMAP_API_KEY=${{ secrets.NEXT_PUBLIC_OPENWEATHERMAP_API_KEY }}" >> $GITHUB_ENV
 
     - name: Start the server
       run: |
         npm run dev > /tmp/server.log 2>&1 &
         echo "Server is starting..."
       env:
-        VARIABLE_NAME: ${{ secrets.OPEN_WEATHER_KEY }}
+        NEXT_PUBLIC_OPENWEATHERMAP_API_KEY: ${{ secrets.NEXT_PUBLIC_OPENWEATHERMAP_API_KEY }}
 
     - name: Wait for server to be ready
       run: npx wait-on http://localhost:3000 --timeout 300000
