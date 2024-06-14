@@ -37,7 +37,6 @@ jobs:
       run: npm run test:jest
 
     - name: Print server logs for debugging
-      if: failure()
       run: |
         echo "Server logs:"
         cat /tmp/server.log
